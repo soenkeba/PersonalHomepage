@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/soenkeba
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://www.soenkebartling.de
+  * I am soenkeba (https://keybase.io/soenkeba) on keybase.
+  * I have a public key ASCz1JEDxCQTLs47piWzTmKHR7RnPIjZGxjNM5u8BQ_nQAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101d607d60fd0ec573f268bc19f9ead178ea15166390f8576ef4a24929ef9f8a8860a",
+      "host": "keybase.io",
+      "kid": "0120b3d49103c424132ece3ba625b34e628747b4673c88d91b18cd339bbc050fe7400a",
+      "uid": "3688873e65bd69fb274ad95197e19b19",
+      "username": "soenkeba"
+    },
+    "merkle_root": {
+      "ctime": 1581483688,
+      "hash": "d8a8f04377fc7776051d00b82bb669a31d3063559ee5f6abe779301d1374ab51f72f012b31de27c28c58f0d6e1a07d1cd201b40274cb87302ac71050af0d9b53",
+      "hash_meta": "8b7a951f534e4e3e388c742934e80201cb6bb9fe822d6f786a50c5fa5e7cc5cb",
+      "seqno": 14575606
+    },
+    "service": {
+      "entropy": "yazKRAGYUfiQgr+GdCISEevn",
+      "hostname": "www.soenkebartling.de",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.2.0"
+  },
+  "ctime": 1581483711,
+  "expire_in": 504576000,
+  "prev": "5b621aa38e0566a87b14b1b73ce7b885b0e4b2c16872201ed2f866c1ba2960cf",
+  "seqno": 51,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgs9SRA8QkEy7OO6Yls05ih0e0ZzyI2RsYzTObvAUP50AKp3BheWxvYWTESpcCM8QgW2Iao44FZqh7FLG3POe4hbDkssFociAe0vhmwbopYM/EIGSuF310LvoW5G16K1wMAbMOHhgAfqI0cIabqj13s7p9AgHCo3NpZ8RAq8VZvT3Y/oEB+Ycz7C0r8+Ch50Z9NOrpsUHuPKAljqaYLWhDvBQrXGIdOP9gQeXMVMz4YMZiJjkpVWJrajS3BahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIJtSL43X66hiywVJzaE66sLg4BOZ5kQqfN97N8e1eY3+o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/soenkeba
+
+==================================================================
