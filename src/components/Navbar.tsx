@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 
 const Navbar = () => {
@@ -20,23 +21,26 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <motion.a
-            href="#"
-            className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white"
+          <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            PD Dr. Sönke Bartling
-          </motion.a>
+            <Link
+              to="/"
+              className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white block"
+            >
+              PD Dr. Sönke Bartling
+            </Link>
+          </motion.div>
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a
-              href="#home"
+            <Link
+              to="/"
               className="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
             >
               Home
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -71,13 +75,13 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden py-4"
           >
-            <a
-              href="#home"
+            <Link
+              to="/"
               className="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Home
-            </a>
+            </Link>
           </motion.div>
         )}
       </div>
