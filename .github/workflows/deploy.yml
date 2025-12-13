@@ -3,7 +3,7 @@ name: Deploy Website to Strato
 on:
   push:
     branches:
-      - main  # Change to 'master' if that's your default branch
+      - master
 
 jobs:
   deploy:
