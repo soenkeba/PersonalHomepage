@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 
 const Navbar = () => {
@@ -7,7 +7,6 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { scrollY } = useScroll()
   const location = useLocation()
-  const navigate = useNavigate()
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 50)
@@ -17,13 +16,8 @@ const Navbar = () => {
     if (location.pathname === '/') {
       e.preventDefault()
       window.scrollTo({ top: 0, behavior: 'smooth' })
-    } else {
-      navigate('/')
-      // Scroll to top after navigation
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-      }, 100)
     }
+    // If on another page, Link will handle navigation
     setIsMobileMenuOpen(false)
   }
 
@@ -41,24 +35,24 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <a
-              href="/"
+            <Link
+              to="/"
               onClick={handleHomeClick}
               className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white block cursor-pointer"
             >
               PD Dr. Sönke Bartling
-            </a>
+            </Link>
           </motion.div>
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a
-              href="/"
+            <Link
+              to="/"
               onClick={handleHomeClick}
               className="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors cursor-pointer"
             >
               Home
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -93,13 +87,13 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden py-4"
           >
-            <a
-              href="/"
+            <Link
+              to="/"
               onClick={handleHomeClick}
               className="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors cursor-pointer"
             >
               Home
-            </a>
+            </Link>
           </motion.div>
         )}
       </div>
