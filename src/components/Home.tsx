@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Hero from './Hero'
 import About from './About'
 import SectionCard from './SectionCard'
@@ -5,6 +6,11 @@ import ImageCarousel from './ImageCarousel'
 import Contact from './Contact'
 
 const Home = () => {
+  useEffect(() => {
+    // Scroll to top when Home component mounts
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
+
   return (
     <>
       <Hero />

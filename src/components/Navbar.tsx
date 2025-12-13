@@ -1,15 +1,31 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { scrollY } = useScroll()
+  const location = useLocation()
+  const navigate = useNavigate()
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 50)
   })
+
+  const handleHomeClick = (e: React.MouseEvent) => {
+    if (location.pathname === '/') {
+      e.preventDefault()
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      navigate('/')
+      // Scroll to top after navigation
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }, 100)
+    }
+    setIsMobileMenuOpen(false)
+  }
 
   return (
     <motion.nav
@@ -25,22 +41,24 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Link
-              to="/"
-              className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white block"
+            <a
+              href="/"
+              onClick={handleHomeClick}
+              className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white block cursor-pointer"
             >
               PD Dr. Sönke Bartling
-            </Link>
+            </a>
           </motion.div>
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link
-              to="/"
-              className="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+            <a
+              href="/"
+              onClick={handleHomeClick}
+              className="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors cursor-pointer"
             >
               Home
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -75,13 +93,13 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden py-4"
           >
-            <Link
-              to="/"
-              className="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
+            <a
+              href="/"
+              onClick={handleHomeClick}
+              className="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors cursor-pointer"
             >
               Home
-            </Link>
+            </a>
           </motion.div>
         )}
       </div>
