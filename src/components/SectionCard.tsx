@@ -17,8 +17,8 @@ const SectionCard = ({ title, image, imageAlt, content, imagePosition }: Section
   })
 
   const x = useTransform(scrollYProgress, [0, 1], imagePosition === 'left' ? [-50, 50] : [50, -50])
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0])
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8])
+  // Simplified scale - sections are always visible
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1, 1])
 
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
@@ -54,7 +54,10 @@ const SectionCard = ({ title, image, imageAlt, content, imagePosition }: Section
     >
       <div className="container mx-auto max-w-7xl">
         <motion.div
-          style={{ opacity, scale }}
+          initial={{ opacity: 1 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-50px' }}
+          style={{ scale }}
           className="grid md:grid-cols-2 gap-12 items-center"
         >
           {/* Image */}

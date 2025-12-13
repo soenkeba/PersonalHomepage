@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -12,12 +11,12 @@ const Footer = () => {
           transition={{ duration: 0.6 }}
         >
           <p className="mb-4">
-            <Link
-              to="/impressum"
+            <a
+              href="/impressum.html"
               className="text-gray-400 hover:text-white transition-colors underline"
             >
               Impressum
-            </Link>
+            </a>
           </p>
           <div className="border-t border-gray-800 pt-4">
             <p className="text-sm text-gray-500">
