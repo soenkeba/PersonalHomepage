@@ -12,14 +12,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Deploy to Strato via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.SFTP_SERVER }}
-          username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          protocol: sftp
-          port: 22
-          local-dir: ./
-          server-dir: /
-          dangerous-clean-slate: false
+      - name: Setup SSH and Deploy via SFTP
+        env:
+          SSHPASS: ${{ secrets.SFTP_PASSWORD }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y sshpass rsync
+          sshpass -e rsync -avz --delete \
+            -e "ssh -o StrictHostKeyChecking=no -p 22" \
+            ./ ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }}:/
