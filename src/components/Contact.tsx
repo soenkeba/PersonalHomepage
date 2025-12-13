@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { 
   FaLinkedin, 
@@ -10,6 +11,8 @@ import {
 import { SiMedium } from 'react-icons/si'
 
 const Contact = () => {
+  const [emailRevealed, setEmailRevealed] = useState(false)
+  
   const socialLinks = [
     { icon: FaLinkedin, href: 'https://www.linkedin.com/in/soenkebartling', label: 'LinkedIn' },
     { icon: FaGithub, href: 'https://github.com/soenkeba', label: 'GitHub' },
@@ -20,9 +23,22 @@ const Contact = () => {
     { icon: FaFacebook, href: 'https://www.facebook.com/Soenkebartling', label: 'Facebook' },
   ]
 
-  // Decode obfuscated email (from the original script)
-  const email = 'soenkebartling@gmail.com'
-  const emailOrg = 'soenkebartling@orgmailbox.com'
+  // Obfuscated email storage - split and reversed parts
+  const emailData = {
+    user: ['soenke', 'bartling'].reverse().join(''),
+    domain: ['gmail', 'com'].join('.'),
+  }
+
+  // Reconstruct email at runtime
+  const getEmail = () => {
+    if (!emailRevealed) return 'Click to reveal email'
+    return `${emailData.user}@${emailData.domain}`
+  }
+
+  const getEmailHref = () => {
+    if (!emailRevealed) return '#'
+    return `mailto:${emailData.user}@${emailData.domain}`
+  }
 
   return (
     <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
@@ -41,20 +57,20 @@ const Contact = () => {
           <div className="space-y-2 mb-12 text-lg text-gray-700 dark:text-gray-300">
             <div className="space-y-2">
               <p>
-                <a
-                  href={`mailto:${email}`}
-                  className="text-primary hover:underline transition-colors"
+                <motion.a
+                  href={getEmailHref()}
+                  onClick={(e) => {
+                    if (!emailRevealed) {
+                      e.preventDefault()
+                      setEmailRevealed(true)
+                    }
+                  }}
+                  className="text-primary hover:underline transition-colors cursor-pointer inline-block"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  {email}
-                </a>
-              </p>
-              <p>
-                <a
-                  href={`mailto:${emailOrg}`}
-                  className="text-primary hover:underline transition-colors"
-                >
-                  {emailOrg}
-                </a>
+                  {getEmail()}
+                </motion.a>
               </p>
               <p className="mt-4">
                 <a

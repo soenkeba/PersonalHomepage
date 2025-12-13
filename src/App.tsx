@@ -23,8 +23,7 @@ function App() {
             <p>
               I´m a German board-certified radiologist, university hospital attending level trained with experiences in Neuroimaging, whole-body MRI incl. cardiac-MRI, as well as interventional radiology. I have worked in 25 different setups
               ranging from private practices through community hospitals, including three university hospitals in Germany, Switzerland, and the USA. I prefer the inspiring environment of a university hospital, the thrill of emergency
-              interventions, and the interactions with residents and students over other setups. I contentiously restructure our profession's culture to adopt to the demands of Generation Y and digitization. Currently, I work as attending
-              at Mannheim University Hospital. I´m member of several national and international radiological and interventional societies.
+              interventions, and the interactions with residents and students over other setups. I contentiously restructure our profession's culture to adopt to the demands of Generation Y and digitization. Currently, I freelance in private practices. I´m member of several national and international radiological and interventional societies.
             </p>
           }
           imagePosition="left"
