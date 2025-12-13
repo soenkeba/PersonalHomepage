@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
 import Hero from './Hero'
 import About from './About'
 import SectionCard from './SectionCard'
@@ -7,12 +6,14 @@ import ImageCarousel from './ImageCarousel'
 import Contact from './Contact'
 
 const Home = () => {
-  const location = useLocation()
-
   useEffect(() => {
-    // Scroll to top when Home component mounts or when navigating to it
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [location.pathname])
+    // Scroll to top immediately when Home component mounts
+    // Use both instant and smooth scroll to ensure it works
+    window.scrollTo(0, 0)
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, 10)
+  }, [])
 
   return (
     <>

@@ -16,8 +16,10 @@ const Navbar = () => {
     if (location.pathname === '/') {
       e.preventDefault()
       window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      // If on another page, let Link handle navigation
+      // The Home component will handle scrolling to top
     }
-    // If on another page, Link will handle navigation
     setIsMobileMenuOpen(false)
   }
 
