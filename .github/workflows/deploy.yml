@@ -18,6 +18,9 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y sshpass rsync
+          # Deploy to Strato web root directory
+          # Common paths: /html/, /www/, /htdocs/, or use SFTP_TARGET_DIR secret
+          TARGET_DIR="${SFTP_TARGET_DIR:-/html/}"
           sshpass -e rsync -avz --delete \
             -e "ssh -o StrictHostKeyChecking=no -p 22" \
-            ./ ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }}:/
+            ./ ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }}:$TARGET_DIR
