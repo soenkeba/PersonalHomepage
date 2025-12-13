@@ -31,6 +31,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y sshpass rsync
           # Deploy dist folder to Strato web root (Home directory is the web root)
+          # First, remove old HTML files that might conflict
+          sshpass -e ssh -o StrictHostKeyChecking=no -p 22 ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }} "rm -f index.html impressum.html about-us.html service-page.html pricing.html untitled.html || true"
+          # Deploy new React app
           sshpass -e rsync -avz --delete \
             -e "ssh -o StrictHostKeyChecking=no -p 22" \
             ./dist/ ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }}:~/
