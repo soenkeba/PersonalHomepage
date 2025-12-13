@@ -15,12 +15,13 @@ jobs:
       - name: Setup SSH and Deploy via SFTP
         env:
           SSHPASS: ${{ secrets.SFTP_PASSWORD }}
+          TARGET_DIR: ${{ secrets.SFTP_TARGET_DIR }}
         run: |
           sudo apt-get update
           sudo apt-get install -y sshpass rsync
           # Deploy to Strato web root directory (default: /html/)
           # You can set SFTP_TARGET_DIR secret to override (e.g., /www/, /htdocs/)
-          TARGET_DIR="${{ secrets.SFTP_TARGET_DIR || '/html/' }}"
+          DEPLOY_DIR="${TARGET_DIR:-/html/}"
           sshpass -e rsync -avz --delete \
             -e "ssh -o StrictHostKeyChecking=no -p 22" \
-            ./ ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }}:$TARGET_DIR
+            ./ ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }}:$DEPLOY_DIR
