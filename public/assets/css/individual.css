@@ -1,0 +1,45 @@
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: .75rem 1.25rem;
+  margin-bottom: -1px;
+  background-color: #fff;
+  /*border: 3px solid rgba(0,0,0,.125);*/
+  border: 0;
+}
+
+.testicons a {
+  /*font-size: 16px;*/
+  color: #3b99e0;
+  opacity: .75;
+  height: 2em;
+  line-height: 2;
+  text-align: center;
+  padding: .6em .4em;
+}
+
+.testicons a:hover {
+  /*font-size: 16px;*/
+  color: #0056b3;
+  #0056b3;: .75;
+  height: 2em;
+  line-height: 2;
+  text-align: center;
+  padding: .6em .4em;
+  text-decoration: none;
+}
+
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  /*background-clip: border-box;*/
+  border: 0px solid rgba(0,0,0,.125);
+  /*border-radius: .25rem;*/
+}
+
