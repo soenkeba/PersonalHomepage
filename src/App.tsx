@@ -9,10 +9,17 @@ import Impressum from './components/Impressum'
 import Loading from './components/Loading'
 
 function AppContent() {
-  const [isInitialLoad, setIsInitialLoad] = useState(true)
+  // Check if this is the very first load ever (using sessionStorage to persist across page refreshes)
+  const [isInitialLoad, setIsInitialLoad] = useState(() => {
+    // Check if we've already loaded before in this session
+    const hasLoadedBefore = sessionStorage.getItem('hasLoadedBefore')
+    return !hasLoadedBefore
+  })
 
   const handleLoadingComplete = () => {
     setIsInitialLoad(false)
+    // Mark that we've loaded before in this session
+    sessionStorage.setItem('hasLoadedBefore', 'true')
   }
 
   useEffect(() => {
