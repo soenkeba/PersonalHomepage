@@ -25,7 +25,7 @@ const Contact = () => {
 
   // Obfuscated email storage - split and reversed parts
   const emailData = {
-    user: ['soenke', 'bartling'].reverse().join(''),
+    user: [...['bartling', 'soenke']].reverse().join(''),
     domain: ['gmail', 'com'].join('.'),
   }
 
