@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
+const baseUrl = import.meta.env.BASE_URL
+
 const images = [
-  '/assets/img/IMG_2503.jpeg',
-  '/assets/img/IMG_2550.jpeg',
-  '/assets/img/IMG_2547.jpeg',
-  '/assets/img/IMG_4140.jpg',
+  `${baseUrl}assets/img/IMG_2503.jpeg`,
+  `${baseUrl}assets/img/IMG_2550.jpeg`,
+  `${baseUrl}assets/img/IMG_2547.jpeg`,
+  `${baseUrl}assets/img/IMG_4140.jpg`,
 ]
 
 const ImageCarousel = () => {
