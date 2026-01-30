@@ -15,7 +15,7 @@ const Hero = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
-  const roles = ['Radiologist', 'Scientist', 'Blockchain for Science']
+  const roles = ['Radiologist', 'Medical Imaging Researcher', 'Open Science & DeSci Pioneer', 'AI & Technology']
 
   return (
     <section

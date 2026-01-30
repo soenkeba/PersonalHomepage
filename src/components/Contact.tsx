@@ -50,13 +50,18 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-gradient">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gradient">
             Contact
           </h2>
 
-          <div className="space-y-2 mb-12 text-lg text-gray-700 dark:text-gray-300">
-            <div className="space-y-2">
+          <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
+            I am available for academic collaborations, consulting engagements, speaking invitations, and conversations about the future of science and technology.
+          </p>
+
+          <div className="space-y-4 mb-12 text-lg text-gray-700 dark:text-gray-300">
+            <div className="space-y-3">
               <p>
+                <strong>Email:</strong>{' '}
                 <motion.a
                   href={getEmailHref()}
                   onClick={(e) => {
@@ -72,13 +77,68 @@ const Contact = () => {
                   {getEmail()}
                 </motion.a>
               </p>
+              <p>
+                <strong>Web:</strong>{' '}
+                <a
+                  href="https://www.soenkebartling.de"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline transition-colors"
+                >
+                  www.soenkebartling.de
+                </a>
+              </p>
+              <p>
+                <strong>LinkedIn:</strong>{' '}
+                <a
+                  href="https://linkedin.com/in/soenkebartling"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline transition-colors"
+                >
+                  linkedin.com/in/soenkebartling
+                </a>
+              </p>
+              <p>
+                <strong>Twitter/X:</strong>{' '}
+                <a
+                  href="https://twitter.com/soenkeba"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline transition-colors"
+                >
+                  @soenkeba
+                </a>
+              </p>
+              <p>
+                <strong>ResearchGate:</strong>{' '}
+                <a
+                  href="https://researchgate.net/profile/Soenke-Bartling"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline transition-colors"
+                >
+                  researchgate.net/profile/Soenke-Bartling
+                </a>
+              </p>
+              <p>
+                <strong>ORCID:</strong>{' '}
+                <a
+                  href="https://orcid.org/0000-0001-5434-9433"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline transition-colors"
+                >
+                  0000-0001-5434-9433
+                </a>
+              </p>
               <p className="mt-4">
                 <a
                   href="/soenkebartling05F6344Dpublic.asc"
                   className="text-primary hover:underline transition-colors"
                   download
                 >
-                  PGP
+                  PGP Public Key
                 </a>
               </p>
             </div>
