@@ -206,7 +206,7 @@ const Home = () => {
               <div>
                 <h4 className="text-xl font-semibold mb-2">DeSci Commons</h4>
                 <p>
-                  More recently, I have been involved in developing guidelines and best practices for the DeSci community through initiatives like DeSci Commons (descicommons.org), working to ensure that the idealism of decentralized science is matched by rigorous standards and practical implementation frameworks.
+                  More recently, I have been involved in developing guidelines and best practices for the DeSci community through initiatives like <a href="https://descicommons.org" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">DeSci Commons</a>, working to ensure that the idealism of decentralized science is matched by rigorous standards and practical implementation frameworks.
                 </p>
               </div>
             </div>
