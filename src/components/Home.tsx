@@ -167,7 +167,7 @@ const Home = () => {
               <div>
                 <h4 className="text-xl font-semibold mb-2">Pioneering Work</h4>
                 <p>
-                  In 2016, together with Benedikt Fecher, I published what is widely recognized as the first comprehensive academic treatment of blockchain applications in science: "Blockchain for Science and Knowledge Creation." This paper, written years before "DeSci" emerged as a recognized movement, outlined how blockchain could enable transparent peer review, immutable research records, novel funding mechanisms, and new models for attributing scientific contributions.
+                  In 2016, together with Benedikt Fecher, I published what is widely recognized as the first comprehensive academic treatment of blockchain applications in science: "<a href="https://zenodo.org/records/60223" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">Blockchain for Science and Knowledge Creation</a>." This paper, written years before "DeSci" emerged as a recognized movement, outlined how blockchain could enable transparent peer review, immutable research records, novel funding mechanisms, and new models for attributing scientific contributions.
                 </p>
                 <p>
                   The core insight was that blockchain's properties—decentralization, transparency, immutability, and programmable incentives—aligned remarkably well with the ideals that science aspires to but often fails to achieve in practice. A system where research claims are timestamped and verifiable, where contributions are fairly attributed, and where the gatekeeping functions of traditional publishing are replaced by transparent community governance.
