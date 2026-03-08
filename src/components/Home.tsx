@@ -177,7 +177,7 @@ const Home = () => {
               <div>
                 <h4 className="text-xl font-semibold mb-2">BFS Blockchain for Science GmbH</h4>
                 <p>
-                  To advance these ideas from theory to practice, I founded BFS Blockchain for Science GmbH in Berlin in 2018. The organization serves as:
+                  To advance these ideas from theory to practice, I founded <a href="https://www.blockchainforscience.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">BFS Blockchain for Science GmbH</a> in Berlin in 2018. The organization serves as:
                 </p>
                 <ul className="list-disc list-inside space-y-2 ml-4">
                   <li>A <strong>think tank</strong> for conceptual development and strategic analysis of blockchain applications in research</li>
