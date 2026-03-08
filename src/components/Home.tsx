@@ -124,9 +124,9 @@ const Home = () => {
             
             <div className="space-y-4">
               <div>
-                <h4 className="text-xl font-semibold mb-2">Opening Science</h4>
+                <h4 className="text-xl font-semibold mb-2"><a href="https://www.openingscience.org/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">Opening Science</a></h4>
                 <p>
-                  In 2014, together with Sascha Friesike, I edited "Opening Science: The Evolving Guide on How the Internet is Changing Research, Collaboration and Scholarly Publishing," published by SpringerNature as an Open Access volume. The book brought together leading voices in the Open Science movement to articulate how digital technologies could democratize knowledge creation and dissemination.
+                  In 2014, together with Sascha Friesike, I edited "<a href="https://link.springer.com/book/10.1007/978-3-319-00026-8" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">Opening Science: The Evolving Guide on How the Internet is Changing Research, Collaboration and Scholarly Publishing</a>," published by SpringerNature as an Open Access volume. The book brought together leading voices in the Open Science movement to articulate how digital technologies could democratize knowledge creation and dissemination.
                 </p>
                 <p>
                   The response exceeded all expectations. "Opening Science" became SpringerNature's most downloaded Open Access book—a distinction it held for several years—with hundreds of thousands of downloads from researchers, policymakers, and science enthusiasts worldwide. In 2015, the project was recognized as an "Excellent Place in the Land of Ideas" by the German government's innovation initiative.
